@@ -17,12 +17,12 @@ export class Game {
   @Column()
   title: string;
 
-  @ManyToMany(() => User, (user) => user.games)
-  users: User[];
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToMany(() => User, (user) => user.games)
+  users: User[];
 }

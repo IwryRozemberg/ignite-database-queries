@@ -24,13 +24,13 @@ export class User {
   @Column()
   email: string;
 
-  @ManyToMany(() => Game, (game) => game.users)
-  @JoinTable()
-  games: Game[];
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToMany(() => Game, (game) => game.users)
+  @JoinTable()
+  games: Game[];
 }

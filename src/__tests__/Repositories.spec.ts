@@ -200,7 +200,7 @@ describe('Repositories', () => {
         title: 'Rocket League',
       },
     });
-
+    console.log(game);
     const users = await gamesRepository.findUsersByGameId(game.id);
 
     expect(users).toEqual([
